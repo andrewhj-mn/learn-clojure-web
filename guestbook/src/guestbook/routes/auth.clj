@@ -5,6 +5,7 @@
             [noir.session :as session]
             [noir.validation :refer [rule errors? has-value? on-error]]
             [noir.util.crypt :as crypt]
+            [guestbook.models.db :as db]
             [hiccup.form :refer
              [form-to label text-field password-field submit-button]]))
 
@@ -84,4 +85,8 @@
                  (submit-button "logout"))))
   (POST "/logout" []
         (session/clear!)
-        (redirect "/")))
+        (redirect "/"))
+  (GET "/records" []
+       (noir.response/content-type "text/plain" "some plain text"))
+  (GET "/get-message" []
+       (noir.response/json {:message "everything went better than expected"})))
