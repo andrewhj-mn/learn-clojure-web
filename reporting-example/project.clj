@@ -4,6 +4,9 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [compojure "1.1.6"]
                  [hiccup "1.0.5"]
+                 [postgresql/postgresql "9.1-901.jdbc4"]
+                 [org.clojure/java.jdbc "0.2.3"]
+                 [clj-pdf "1.11.6"]
                  [ring-server "0.3.1"]]
   :plugins [[lein-ring "0.8.10"]]
   :ring {:handler reporting-example.handler/app
